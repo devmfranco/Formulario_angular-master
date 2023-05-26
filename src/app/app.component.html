@@ -1,0 +1,265 @@
+<div class="form-group d-flex justify-content-center align-items-center">
+  <div class="container minimizer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="border border-2 beauty">
+          <div class="jumbotron ">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-offset-2 col-xs-8">
+                  <h1 class="display-12 text-center formulario">
+                    <div class="text-center">
+                      <img class="img-responsive col-sm-12" style="width:40%;" src="assets/image/logo-micm-invertido.png" alt="" />
+                    </div>
+                    <br />
+
+                    Soporte técnico a usuarios
+                  </h1>
+
+                  <p id="textoVariable "class="lead">
+                    Hola, {{ usuario }}. Cuando envíe este formulario, el
+                    propietario verá su nombre y dirección de correo
+                    electrónico.
+                  </p>
+
+                  <hr class="my-4" />
+
+                  <p>Formulario aqui.</p>
+
+                  <p class="lead"></p>
+
+                  <form class="beauty">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1"
+                        >1. Indique nombre completo del solicitante</label
+                      >
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="name@example.com"
+                        required="true"
+                      />
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1"
+                        >2. Indique su vice-ministerio o dirección?</label
+                      >
+
+                      <select
+                        class="form-control"
+                        id="exampleFormControlSelect1"
+                      >
+                        <option
+                          *ngFor="let option of options"
+                          [value]="option.value"
+                        >
+                          {{ option.label }}
+                        </option>
+                      </select>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                      <label for="exampleFormControlInput3"
+                        >3. Indique su ubicación específica,
+                        (departamento-piso-oficina).</label
+                      >
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput3"
+                        placeholder="name@example.com"
+                        required="true"
+                      />
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                      <label for="exampleFormControlInput4"
+                        >4. Indique su número de contacto o extensión</label
+                      >
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput4"
+                        placeholder="name@example.com"
+                        required="true"
+                      />
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect2"
+                        >5. Seleccione en qué se necesita ayuda?
+                      </label>
+
+                      <select
+                        (change)="onOptionSelected($event.target.value)"
+                        class="form-control"
+                        id="exampleFormControlSelect2"
+                        required="true"
+                      >
+                        <option
+                          *ngFor="let option of options"
+                          [value]="option.value"
+                        >
+                          {{ option.label }}
+                        </option>
+                      </select>
+                    </div>
+
+                    <br />
+
+                    <div *ngIf="selectedOption" class="form-group">
+                      <label for="exampleFormControlSelect3"
+                        >6. Seleccione el tipo de servicio en el cuál necesita
+                        ayuda?</label
+                      >
+
+                      <select
+                        (change)="onOptionSelected($event.target.value)"
+                        class="form-control"
+                        id="exampleFormControlSelect3"
+                        required="true"
+                        [(ngModel)]="selectedServiceOption"
+                        [ngModelOptions]="{ standalone: true }"
+                      >
+                        <option
+                          *ngFor="let field of optionsService"
+                          [value]="field"
+                        >
+                          {{ field.label }}
+                        </option>
+                      </select>
+                    </div>
+
+                    <div *ngIf="selectedServiceOption" class="form-group">
+                      <label for="exampleFormControlTextarea1"
+                        >7. Especifique el detalle de su solicitud:</label
+                      >
+
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        name="service"
+                        placeholder="Escribir aquí"
+                        rows="3"
+                        required="true"
+                        [(ngModel)]="service"
+                        [ngModelOptions]="{ standalone: true }"
+                      ></textarea>
+                    </div>
+
+                    <br />
+
+                    <div class="mt-2 text-center">
+                      <button
+                        class="btn btn-primary text-uppercase"
+                        type="submit"
+                      >
+                        Enviar
+                      </button>
+                    </div>
+
+                    <br />
+                  </form>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="container">
+
+
+
+</div>
+
+
+
+<div class="container">
+  <form class="formulario" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1> Formulario de solicitud de ayuda</h1>
+      </div>
+    </div>
+
+
+  </form>
+
+  <div class="row">
+    <div class="form-group">
+      <label  for="nombreCompleto">Nombre completo del solicitante</label>
+      <input type="text" id="nombreCompleto" name="nombreCompleto" class="form-control" [(ngModel)]="nombreCompleto" required>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <label for="Viceministerio">Viceministerio o dirección</label>
+      <select id="Viceministerio" name="ayudaNecesaria"[(ngModel)]="ayudaNecesaria" class="form-control" required>
+
+        <option value="" disabled selected hidden>Seleccionar</option>
+        <option value="UPS">UPS</option>
+        <option value="UPS">Metro</option>
+
+      </select>
+    </div>
+    <button (click)="cambiarStatus(abre)" class="btn btn-primary">Mostrar Div</button>
+
+    <div *ngIf="validar" class="div container">
+      <h2> HOla</h2>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <label for="ubicacionEspecifica">Ubicación específica</label>
+      <input type="text" id="ubicacionEspecifica" name="ubicacionEspecifica" class="form-control" [(ngModel)]="ubicacionEspecifica" required>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <label for="numeroContacto">Número de contacto o extensión</label>
+      <input type="text" id="numeroContacto" name="numeroContacto" [(ngModel)]="numeroContacto"  class="form-control" required>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <label for="ayudaNecesaria">Seleccione en qué se necesita ayuda</label>
+      <select id="ayudaNecesaria" name="ayudaNecesaria" [(ngModel)]="ayudaNecesaria" class="form-control" required>
+        <option value="">Seleccionar</option>
+        <option value="UPS">UPS</option>
+
+      </select>
+    </div>
+
+
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <label for="tipoServicio">Seleccione el tipo de servicio en el que necesita ayuda</label>
+      <select id="tipoServicio" name="tipoServicio" class="form-control" [(ngModel)]="tipoServicio" required>
+        <option value="">Seleccionar</option>
+        <option value="Crear formulario en Angular">Crear formulario en Angular</option>
+      </select>
+    </div>
+
+    <div class="col-md-12 mt-2">
+
+      <button class="btn btn-large btn-primary col-md-12 text-uppercase" type="submit">Enviar</button>
+     </div>
+  </div>
+</div>
+--->
+  </div>
+</div>

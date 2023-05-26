@@ -1,0 +1,87 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+agm-map {
+  height: 400px;
+}
+
+.epn-bg {
+  background-color: #06284e;
+  color: #FFF;
+  padding: 60px;
+  margin-bottom: 60px;
+
+}
+
+.epn-left,
+.epn-right {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.epn-left {
+  width: 30%;
+}
+
+.epn-right {
+  width: 70%;
+}
+
+.epn-label {
+  display: block;
+  width: 100%;
+  color: #06284e;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#epn-table thead tr th {
+  background-color: #06284e;
+  color: #FFF;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.d-grid.gap-2.d-md-flex.justify-content-md-end.ng-star-inserted>h2 {
+  color: #06284e !important;
+  background-color: #ccd7e326 !important;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 3px #f5f5f5;
+}
+
+.epn-button {
+  font-weight: bold;
+  cursor: pointer;
+  color: #06284e;
+  padding: 20px 90px;
+  border: 3px solid #CCD7E3;
+  border-radius: 10px;
+  transition: all 0.20s;
+}
+
+.epn-button:hover,
+.epn-button:focus {
+  background-color: #06284e;
+  border: 1px solid #06284e;
+  color: #CCD7E3;
+}
+
+.mat-input-wrapper {
+  width: 600px !important;
+}
+
+.mat-h4,
+.mat-subheading-1,
+.mat-typography h4 {
+  font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 3px !important;
+}
+
+.radioSize {
+  height: 16px !important;
+  width: 16px !important;
+}
