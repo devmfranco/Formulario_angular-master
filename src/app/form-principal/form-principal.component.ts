@@ -39,65 +39,82 @@ validar = false;
     const imagePath = 'src/logo-micm-invertido.png';
     this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(imagePath);
   }
-   areas = {
-    desViceMinistro : 'Despacho del Vice-Ministro',
-    Vicomex:'Viceministerio Comercio Exterior',
-    VCI:'Viceministerio Comercio Interno',
-    VDI:'Viceministerio Desarrollo Industrial',
-    PYMES:'Viceministerio Fomento Pequeña y Media Emp.',
-    Vizfre:'Viceministerio Zonas Francas y Regimenes Esp.',
-    dirAdm:'Dirección Administrativa',
-    dirFinanciera:'Dirección Administrativa',
-    dirComercioExt:'Dirección Financiera',
-    dirComercioInt:'Dirección Comercio Interno',
-    dirControlGestion:'Dirección Control de Gestión',
-    dirComb:'Dirección de Combustibles',
-    dirCom:'Dirección de Comunicaciones',
-    dirAnalisisEco:'Dirección de Análisis Económico',
-    dirIng:'Dirección de Ingeniería',
-    dirRRHH:'Dirección de Recursos Humanos',
-    dirTecnologia:'Dirección de Tecnología',
-    dirJuridica:'Dirección Jurídica',
-    dirPlanReg:'Dirección Plan Regulador',
-    dirPlanificacion:'Dirección Planificación y Desarrollo',
-    DAIC:'Dirección de Atención Integral al Cliente',
-    dirTratadosComerciales:'Dirección De Administración De Acuerdos Y Tratados Comerciales Internacionales',
-    dirComercioExterior:'',
-    dirEmp:'Dirección De Emprendimiento',
-    DOSAC:'Dirección de Operaciones de Supervisión de Actividades Comerciales',
-    dirEconomiaIndust:'Dirección De Economía Industrial',
-    dirApoyoPymes:'Dirección De Servicios De Apoyo A Las Mipymes',
-    dptoCompras:'Dpto. Compras y Contrataciones',
-    dptoAdmRRHH:'Dpto. de Administración de Recursos Humanos',
-    dptoContab:'Dpto. de Contabilidad',
-    dptoGestionDoc:'Dpto. de Gestión Documental',
-    dptoServGen:'Dpto. de Servicios Generales',
-    deptoTesoreria:'Dpto. de Tesorería',
-    deptoDesarrolloHum:'Dpto. Desarrollo Humano y Planes de Carrera',
-    dptoRelPub:'Dpto. Relaciones Publicas y Pub.',
-    dptoServPerso:'Dpto. Servicio Personal y Relaciones Lab.',
-    dptoPrensa:'Dpto. Prensa',
-    dptoServPresen:'Dpto. de Servicios Presenciales',
-    dptoServLinea:'Dpto. de Servicios en línea',
-    dptoAcceInfo:'Dpto.  de Acceso A La Información',
-    divArchCentral:'División Archivo Central',
-    divCentroDoc:'División Centro de Documentación',
-    divAlmSum:'División de almacén y Suministro',
-    divSegInt:'División de Seguridad Interna',
-    divTransp:'División de Transportación',
-    mntoreoControlInt:'Monitoreo y Control Interno',
-    OAI:'Oficina de Acceso a la Información',
-    OEG:'Oficina de Acceso a la Información',
-    seccCorresp:'Sección de Correspondencia',
-    seccMant:'Sección Mantenimiento',
-    seccMayord:'Sección Mayordomia',
-    consultMedic:'Consultorio Medico',
-    coopemic:'Coopemic',
+
+  areas: any[] = [
+  { value: 'Despacho del Vice-Ministro' },
+  { value: 'Viceministerio Comercio Exterior' },
+  { value: 'Viceministerio Comercio Interno' },
+  { value: 'Viceministerio Desarrollo Industrial' },
+  { value: 'Viceministerio Fomento Pequeña y Media Emp.' },
+  { value: 'Viceministerio Zonas Francas y Regimenes Esp.' },
+  { value: 'Dirección Administrativa' },
+  { value: 'Dirección Financiera' },
+  { value: 'Dirección Comercio Exterior' },
+  { value: 'Dirección Comercio Interno' },
+  { value: 'Dirección Control de Gestión' },
+  { value: 'Dirección de Combustibles' },
+  { value: 'Dirección de Comunicaciones' },
+  { value: 'Dirección de Análisis Económico' },
+  { value: 'Dirección de Ingeniería' },
+  { value: 'Dirección de Recursos Humanos' },
+  { value: 'Dirección de Tecnología' },
+  { value: 'Dirección Jurídica' },
+  { value: 'Dirección Plan Regulador' },
+  { value: 'Dirección Planificación y Desarrollo' },
+  { value: 'Dirección de Atención Integral al Cliente' },
+  { value: 'Dirección De Administración De Acuerdos Y Tratados Comerciales Internacionales' },
+  { value: 'Dirección Comercio Exterior' },
+  { value: 'Dirección De Emprendimiento' },
+  { value: 'Dirección de Operaciones de Supervisión de Actividades Comerciales' },
+  { value: 'Dirección De Economía Industrial' },
+  { value: 'Dirección De Servicios De Apoyo A Las Mipymes' },
+  { value: 'Dpto. Compras y Contrataciones' },
+  { value: 'Dpto. de Administración de Recursos Humanos' },
+  { value: 'Dpto. de Contabilidad' },
+  { value: 'Dpto. de Gestión Documental' },
+  { value: 'Dpto. de Servicios Generales' },
+  { value: 'Dpto. de Tesorería' },
+  { value: 'Dpto. Desarrollo Humano y Planes de Carrera' },
+  { value: 'Dpto. Relaciones Publicas y Pub.' },
+  { value: 'Dpto. Servicio Personal y Relaciones Lab.' },
+  { value: 'Dpto. Prensa' },
+  { value: 'Dpto. de Servicios Presenciales' },
+  { value: 'Dpto. de Servicios en línea' },
+  { value: 'Dpto. de Acceso A La Información' },
+  { value: 'División Archivo Central' },
+  { value: 'División Centro de Documentación' },
+  { value: 'División de almacén y Suministro' },
+  { value: 'División de Seguridad Interna' },
+  { value: 'División de Transportación' },
+  { value: 'Monitoreo y Control Interno' },
+  { value: 'Oficina de Acceso a la Información' },
+  { value: 'Oficina de Acceso a la Información' },
+  { value: 'Sección de Correspondencia' },
+  { value: 'Sección Mantenimiento' },
+  { value: 'Sección Mayordomia' },
+  { value: 'Consultorio Medico' },
+  { value: 'Coopemic' },
+  ];
+
+  services: any[] = [
+
+    { value: 'USUARIOS Y ACCESOS' },
+    { value: 'COMPUTADOR' },
+    { value: 'INTERNET' },
+    { value: 'IMPRESORA' },
+    { value: 'ESCANER' },
+    { value: 'CORREO ELECTRONICO' },
+    { value: 'TELEFONÍA' },
+    { value: 'SOFTWARE' },
+    { value: 'REDES' },
+    { value: 'UPS' },
+    { value: 'VIRUS' },
+    { value: 'ASISTENCIA SALÓN DE CONFERENCIAS' },
+    { value: 'SERVICIOS AUDIOVISUALES' },
+
+  ];
 
 
-
-
-   }
 
   options = [
     { value: 'option1', label: 'Option 1', fields: [
@@ -111,6 +128,10 @@ validar = false;
       { label: 'Field 3', type: 'text', value: '', placeholder: 'Enter Field 3' }
     ]}
   ];
+
+
+
+
 optionsService = [
   { value: 'option1', label: 'Option 1', fields: [
     { label: '6. Seleccione el tipo de servicio en el cuál necesita ayuda? ', type: 'text', value: '', placeholder: 'Enter Field 1' }

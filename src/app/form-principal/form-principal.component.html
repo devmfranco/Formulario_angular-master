@@ -54,12 +54,10 @@
                         class="form-control"
                         id="exampleFormControlSelect1"
                       >
-                        <option
-                          *ngFor="let option of options"
-                          [value]="option.value"
-                        >
-                          {{ option.label }}
-                        </option>
+                      <option *ngFor="let area of areas" [value]="area.value">
+                        {{ area.value }}
+                      </option>
+
                       </select>
                     </div>
 
@@ -104,17 +102,12 @@
                       </label>
 
                       <select
-                        (change)="onOptionSelected($event.target.value)"
-                        class="form-control"
-                        id="exampleFormControlSelect2"
-                        required="true"
-                      >
-                        <option
-                          *ngFor="let option of options"
-                          [value]="option.value"
-                        >
-                          {{ option.label }}
-                        </option>
+                      class="form-control"
+                      id="exampleFormControlSelect1"
+                    >
+                    <option *ngFor="let service of services" [value]="service.value">
+                      
+
                       </select>
                     </div>
 
