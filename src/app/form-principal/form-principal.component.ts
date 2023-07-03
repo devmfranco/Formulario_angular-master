@@ -38,6 +38,8 @@ validar = false;
     // Ruta de la imagen relativa a la carpeta de activos (assets)
     const imagePath = 'src/logo-micm-invertido.png';
     this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(imagePath);
+
+    //campo 3
   }
 
   areas: any[] = [
@@ -96,6 +98,7 @@ validar = false;
   { value: 'Coopemic' },
   ];
 
+  //campo 5
   services: any[] = [
 
     { value: 'USUARIOS Y ACCESOS' },
@@ -109,10 +112,33 @@ validar = false;
     { value: 'REDES' },
     { value: 'UPS' },
     { value: 'VIRUS' },
-    { value: 'ASISTENCIA SALÓN DE CONFERENCIAS' },
-    { value: 'SERVICIOS AUDIOVISUALES' },
+    { value: 'ASISTENCIA SALÓN DE CONFERENCIAS'},
+    { value: 'SERVICIOS AUDIOVISUALES'},
 
   ];
+
+  // campo 13
+
+  accessDetail:any[] = [
+
+    { value: 'CREACION DE USUARIO' },
+    { value: 'USUARIO BLOQUEADO' },
+    { value: 'CAMBIO DE CONTRASEÑA' },
+    { value: 'DESHABILITACION DE USUARIO' },
+    { value: 'CREACIÓN DE CARPETA COMPARTIDA' },
+    { value: 'ACCESO A CARPETA COMPARTIDA' },
+    { value: 'ACCESO A VENTANILLA' },
+    { value: 'ACCESO A SIGEF' },
+    { value: 'ACCESO A ASLAN' },
+    { value: 'ACCESO A SISTEMA DE RECEPCIÓN DE VISITAS' },
+    { value: 'ACCESO A VPN' },
+    { value: 'ACTUALIZACIÓN DE INFORMACIÓN' },
+    { value: 'CONFIGURACIÓN DE USUARIO EN EQUIPO' },
+  ];
+
+
+
+
 
 
 

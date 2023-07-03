@@ -31,7 +31,7 @@
                   <form class="beauty">
                     <div class="form-group">
                       <label for="exampleFormControlInput1"
-                        >1. Indique nombre completo del solicitante</label
+                        >Indique nombre completo del solicitante</label
                       >
 
                       <input
@@ -44,10 +44,11 @@
                     </div>
 
                     <br />
+                     <!-- campo 2 -->
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1"
-                        >2. Indique su vice-ministerio o dirección?</label
+                        >Indique su vice-ministerio o dirección?</label
                       >
 
                       <select
@@ -62,10 +63,11 @@
                     </div>
 
                     <br />
+                      <!-- campo 3 -->
 
                     <div class="form-group">
                       <label for="exampleFormControlInput3"
-                        >3. Indique su ubicación específica,
+                        >Indique su ubicación específica,
                         (departamento-piso-oficina).</label
                       >
 
@@ -79,10 +81,10 @@
                     </div>
 
                     <br />
-
+                         <!-- campo 3 -->
                     <div class="form-group">
                       <label for="exampleFormControlInput4"
-                        >4. Indique su número de contacto o extensión</label
+                        >Indique su número de contacto o extensión</label
                       >
 
                       <input
@@ -95,10 +97,10 @@
                     </div>
 
                     <br />
-
+                       <!-- campo 4 -->
                     <div class="form-group">
                       <label for="exampleFormControlSelect2"
-                        >5. Seleccione en qué se necesita ayuda?
+                        >Seleccione en qué se necesita ayuda?
                       </label>
 
                       <select
@@ -106,39 +108,40 @@
                       id="exampleFormControlSelect1"
                     >
                     <option *ngFor="let service of services" [value]="service.value">
-                      
+                      {{ service.value }}
+
 
                       </select>
                     </div>
+                    <br/>
+
+                    <ng-container *ngIf="">
+
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect2"
+                          >Seleccione el tipo de servicio en el cual necesita ayuda?
+                        </label>
+
+                        <select
+                        class="form-control"
+                        id="exampleFormControlSelect1"
+                      >
+                      <option *ngFor="let access of accessDetail " [value]="access.value">
+                        {{ access.value }}
+
+                        </select>
+                      </div>
+                    </ng-container>
+                        <!--campo 5 -->
+
+
+
 
                     <br />
-
-                    <div *ngIf="selectedOption" class="form-group">
-                      <label for="exampleFormControlSelect3"
-                        >6. Seleccione el tipo de servicio en el cuál necesita
-                        ayuda?</label
-                      >
-
-                      <select
-                        (change)="onOptionSelected($event.target.value)"
-                        class="form-control"
-                        id="exampleFormControlSelect3"
-                        required="true"
-                        [(ngModel)]="selectedServiceOption"
-                        [ngModelOptions]="{ standalone: true }"
-                      >
-                        <option
-                          *ngFor="let field of optionsService"
-                          [value]="field"
-                        >
-                          {{ field.label }}
-                        </option>
-                      </select>
-                    </div>
-
+                    <!-- campo 7 -->
                     <div *ngIf="selectedServiceOption" class="form-group">
                       <label for="exampleFormControlTextarea1"
-                        >7. Especifique el detalle de su solicitud:</label
+                        >Especifique el detalle de su solicitud:</label
                       >
 
                       <textarea
