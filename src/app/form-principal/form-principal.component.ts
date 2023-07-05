@@ -98,7 +98,7 @@ validar = false;
   { value: 'Coopemic' },
   ];
 
-  //campo 5
+  //services
   services: any[] = [
 
     { value: 'USUARIOS Y ACCESOS' },
@@ -117,7 +117,7 @@ validar = false;
 
   ];
 
-  // campo 13
+  // access
   accessDetail:any[] = [
 
     { value: 'CREACION DE USUARIO' },
@@ -272,45 +272,15 @@ validar = false;
 
 
 
+      selectedService : any;
 
 
+      onOptionSelected(selectedValue: string) {
 
-  options = [
-    { value: 'option1', label: 'Option 1', fields: [
-      { label: '6. Seleccione el tipo de servicio en el cuál necesita ayuda? ', type: 'text', value: '', placeholder: 'Enter Field 1' }
-    ] },
-    { value: 'option2', label: 'Option 2', fields: [
-      { label: '6. Seleccione el tipo de servicio en el cuál necesita ayuda? ', type: 'text', value: '', placeholder: 'Enter Field 1' },
-      { label: 'Field 2', type: 'number', value: null, placeholder: 'Enter Field 2' }
-    ]},
-    { value: 'option3', label: 'Option 3', fields: [
-      { label: 'Field 3', type: 'text', value: '', placeholder: 'Enter Field 3' }
-    ]}
-  ];
+        this.selectedService = selectedValue;
 
-
-
-
-optionsService = [
-  { value: 'option1', label: 'Option 1', fields: [
-    { label: '6. Seleccione el tipo de servicio en el cuál necesita ayuda? ', type: 'text', value: '', placeholder: 'Enter Field 1' }
-  ] },
-  { value: 'option2', label: 'Option 2', fields: [
-    { label: '6. Seleccione el tipo de servicio en el cuál necesita ayuda? ', type: 'text', value: '', placeholder: 'Enter Field 1' },
-    { label: 'Field 2', type: 'number', value: null, placeholder: 'Enter Field 2' }
-  ]},
-  { value: 'option3', label: 'Option 3', fields: [
-    { label: 'Field 3', type: 'text', value: '', placeholder: 'Enter Field 3' }
-  ]}
-];
-selectedOption: any;
-serviceDetail : any;
-selectedServiceOption: any;
-
-  onOptionSelected(selectedValue: string) {
-    this.selectedOption = this.options.find(option => option.value === selectedValue);
-  }
-
+        // Perform any further actions based on the selected value
+      }
 
 
 
