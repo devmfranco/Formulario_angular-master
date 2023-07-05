@@ -118,7 +118,6 @@ validar = false;
   ];
 
   // campo 13
-
   accessDetail:any[] = [
 
     { value: 'CREACION DE USUARIO' },
@@ -135,6 +134,140 @@ validar = false;
     { value: 'ACTUALIZACIÓN DE INFORMACIÓN' },
     { value: 'CONFIGURACIÓN DE USUARIO EN EQUIPO' },
   ];
+
+     //computer
+
+      computer:any[] = [
+
+      { value: 'PC FUERA DEL DOMINIO' },
+      { value: 'MONITOR PRESENTA IMAGEN DISTORSIONADA' },
+      { value: 'TECLADO NO FUNCIONA' },
+      { value: 'DESHABILITACION DE USUARIO' },
+      { value: 'CREACIÓN DE CARPETA COMPARTIDA' },
+      { value: 'INSTALACIÓN DE EQUIPO(ESPECIFIQUE,PARA QUIEN Y EL PORQUE)' },
+      { value: 'COMPUTADOR MUY LENTO' },
+      ];
+
+
+       //internet
+
+      internet:any[] = [
+
+      { value: 'SIN CONEXION A INTERNET' },
+      { value: 'ACCESO A WIFI' },
+      { value: 'SOLICITAR ACCESO A PAGINA ESPECIFICA' },
+
+      ];
+
+      //Printer
+
+      printer:any[] = [
+
+      { value: 'CONFIGURAR MAQUINA DE LABEL' },
+      { value: 'CONFIGURAR IMPRESORA' },
+      { value: 'IMPRIME HOJA SUCIA' },
+      { value: 'NO IMPRIME' }
+
+      ];
+
+      //scanner
+
+      scanner:any[] = [
+
+      { value: 'NO ESCANEA' },
+      { value: 'CONFIGURAR ESCANER'},
+
+      ];
+
+      //email
+
+      email:any[] = [
+
+      { value: 'CREACIÓN DE CORREO' },
+      { value: 'CONFIGURAR CORREO ELECTRÓNICO EN PC' },
+      { value: 'NO RECIBO ,NI ENVÍO CORREOS' },
+      { value: 'CONFIGURAR FIRMA CORREO' },
+
+      ];
+
+      //phone
+
+      phone:any[] = [
+
+      { value: 'TRASLADAR APARATO TELEFONICO' },
+      { value: 'SOLICITUD EXTENSIÓN TELEFÓNICA' },
+      { value: 'CAMBIO DE EXT. O NOMBRE EN APARATO TELEFONICO' },
+      { value: 'TELEFONO NO RECIBE LLAMADAS' },
+      { value: 'NUEVA LINEA TELEFONICA' },
+
+      ];
+
+      //software
+
+      software:any[] = [
+
+      { value: 'COPIAR ARCHIVOS'},
+      { value: 'ERROR AL ABRIR UN ARCHIVO' },
+      { value: 'INSTALAR MS OFFICE' },
+      { value: 'INSTALAR PROGRAMA ESPECIFICO' },
+
+      ];
+
+
+       //network
+
+      network:any[] = [
+      { value:'CABLE DE RED'},
+      { value: 'NUEVO PUNTO DE RED' },
+      { value: 'CONFIGURAR PUNTO DE RED' },
+      { value: 'ASISTENCIA DE LOS PATINILLOS' },
+
+      ];
+
+      //ups
+
+      ups:any[] = [
+
+      { value: 'UPS NO ENCIENDE' },
+      { value: 'MANTIENE UN PITIDO CONSTANTE' },
+      { value: 'CAMBIO DE UPS' },
+
+      ];
+
+      //virus
+
+      virus:any[] = [
+
+      { value: 'COMPUTADOR INFECTADO' },
+
+      ];
+
+      //attendance
+
+      attendance:any[] = [
+
+      { value: 'ASISTENCIA SALÓN DE CONFERENCIAS' },
+      { value: 'INSTALACIÓN PROYECTOR'},
+      { value: 'RESERVACION DE VIDEO CONFERENCIA' },
+      { value: 'RESERVACION DE VIDEO CONFERENCIA' },
+
+
+      ];
+
+      //ventanillaVirtual
+
+      ventanilla:any[] = [
+
+      { value: 'GENERAL' },
+
+
+      ];
+
+
+
+
+
+
 
 
 
