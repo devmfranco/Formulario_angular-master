@@ -18,7 +18,6 @@ export class FormPrincipalComponent {
   abre = false;
   @Input() usuario = 'prueba';
 
-
 validar = false;
   onSubmit() {
     // Aquí puedes realizar acciones con los datos del formulario
@@ -126,13 +125,7 @@ validar = false;
     { value: 'DESHABILITACION DE USUARIO' },
     { value: 'CREACIÓN DE CARPETA COMPARTIDA' },
     { value: 'ACCESO A CARPETA COMPARTIDA' },
-    { value: 'ACCESO A VENTANILLA' },
-    { value: 'ACCESO A SIGEF' },
-    { value: 'ACCESO A ASLAN' },
-    { value: 'ACCESO A SISTEMA DE RECEPCIÓN DE VISITAS' },
-    { value: 'ACCESO A VPN' },
-    { value: 'ACTUALIZACIÓN DE INFORMACIÓN' },
-    { value: 'CONFIGURACIÓN DE USUARIO EN EQUIPO' },
+
   ];
 
      //computer
@@ -263,22 +256,14 @@ validar = false;
 
       ];
 
-
-
-
-
-
-
-
-
-
       selectedService : any;
+      SelectedServiceOption: any; // creacion usuarios
 
 
       onOptionSelected(selectedValue: string) {
 
         this.selectedService = selectedValue;
-
+        this.SelectedServiceOption = selectedValue;
         // Perform any further actions based on the selected value
       }
 
