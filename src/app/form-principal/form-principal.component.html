@@ -9,12 +9,8 @@
                 <div class="col-xs-offset-2 col-xs-8">
                   <h1 class="display-12 text-center formulario">
                     <div class="text-center">
-                      <img
-                        class="img-responsive col-sm-12"
-                        style="width: 40%"
-                        src="assets/image/logo-micm-invertido.png"
-                        alt=""
-                      />
+                      <img class="img-responsive col-sm-12" style="width: 40%"
+                        src="assets/image/logo-micm-invertido.png" alt="" />
                     </div>
                     <br />
                     Soporte técnico a usuarios
@@ -32,34 +28,19 @@
 
                   <form class="beauty" (ngSubmit)="onSubmit()">
                     <div class="form-group">
-                      <label for="exampleFormControlInput1"
-                        >Indique nombre completo del solicitante</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleFormControlInput1"
-                        placeholder="name@example.com"
-                        required
-                        [(ngModel)]="nombreCompleto"
-                        name="nombreCompleto"
-                      />
+                      <label for="exampleFormControlInput1">Indique nombre completo del solicitante</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com" required [(ngModel)]="nombreCompleto" name="nombreCompleto" />
                     </div>
 
                     <br />
 
-                  <!-- Dropdown areas -->
+                    <!-- Dropdown areas -->
 
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1"
-                        >Indique su vice-ministerio o dirección?</label
-                      >
-                      <select
-                        class="form-control"
-                        id="exampleFormControlSelect1"
-                        [(ngModel)]="viceMinisteriodir"
-                        name="viceMinisteriodir"
-                      >
+                      <label for="exampleFormControlSelect1">Indique su vice-ministerio o dirección?</label>
+                      <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="viceMinisteriodir"
+                        name="viceMinisteriodir">
                         <option *ngFor="let area of areas" [value]="area.value">
                           {{ area.value }}
                         </option>
@@ -72,38 +53,21 @@
                     <!-- Textbox ubicacionEspecifica -->
 
                     <div class="form-group">
-                      <label for="exampleFormControlInput3"
-                        >Indique su ubicación específica,
-                        (departamento-piso-oficina).</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleFormControlInput3"
-                        placeholder="name@example.com"
-                        required
-                        [(ngModel)]="ubicacionEspecifica"
-                        name="ubicacionEspecifica"
-                      />
+                      <label for="exampleFormControlInput3">Indique su ubicación específica,
+                        (departamento-piso-oficina).</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput3"
+                        placeholder="name@example.com" required [(ngModel)]="ubicacionEspecifica"
+                        name="ubicacionEspecifica" />
                     </div>
 
                     <br />
 
-                     <!-- Textbox numero de extension -->
+                    <!-- Textbox numero de extension -->
 
                     <div class="form-group">
-                      <label for="exampleFormControlInput4"
-                        >Indique su número de contacto o extensión</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleFormControlInput4"
-                        placeholder="name@example.com"
-                        required
-                        [(ngModel)]="numeroContacto"
-                        name="numeroContacto"
-                      />
+                      <label for="exampleFormControlInput4">Indique su número de contacto o extensión</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput4"
+                        placeholder="name@example.com" required [(ngModel)]="numeroContacto" name="numeroContacto" />
                     </div>
 
                     <br />
@@ -114,46 +78,181 @@
                     <ng-container>
                       <div class="form-group">
                         <label for="exampleFormControlSelect2">Seleccione en qué se necesita ayuda?</label>
-                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedService" name="seleccion" (change)="onOptionSelected($event.target.value)">
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedService"
+                          name="seleccion" (change)="onOptionSelected($event.target.value)">
                           <option *ngFor="let service of services" [value]="service.value">{{ service.value }}</option>
                         </select>
                       </div>
                     </ng-container>
 
 
-                    <!-- Dropdown de usuarios y accesos -->
+                    <!-- Dropdown de servicios-->
+
+                    <!-- Dropdown de usuarios y accesos-->
 
                     <ng-container>
 
-                      <div class="form-group"*ngIf="selectedService === 'USUARIOS Y ACCESOS'">
-                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita ayuda?</label>
-                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="SelectedServiceOption" name="seleccion" (change)="onOptionSelected(item.value)">
+                      <div class="form-group" *ngIf="selectedService === 'USUARIOS Y ACCESOS'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedAccessOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
                           <option *ngFor="let item of accessDetail" [value]="item.value">{{ item.value }}</option>
                         </select>
                       </div>
+
+                      <!-- Dropdown  computador-->
+
+                      <div class="form-group" *ngIf="selectedService === 'COMPUTADOR'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedComputerOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of computer" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown internet-->
+
+                      <div class="form-group" *ngIf="selectedService === 'INTERNET'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedInternetOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of internet" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown impresora-->
+
+                      <div class="form-group" *ngIf="selectedService === 'IMPRESORA'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedPrinterOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of printer" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown escaner-->
+
+                      <div class="form-group" *ngIf="selectedService === 'ESCANER'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedScannerOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of scanner" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown correo-->
+
+                      <div class="form-group" *ngIf="selectedService === 'CORREO ELECTRONICO'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedEmailOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of email" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown telefono-->
+
+                      <div class="form-group" *ngIf="selectedService === 'TELEFONÍA'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedPhoneOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of phone" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown software-->
+
+                      <div class="form-group" *ngIf="selectedService === 'SOFTWARE'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedSoftwareOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of software" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown network-->
+
+                      <div class="form-group" *ngIf="selectedService === 'REDES'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedNetworkOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of network" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown UPS-->
+
+                      <div class="form-group" *ngIf="selectedService === 'UPS'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedUpsOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of ups" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown virus-->
+
+                      <div class="form-group" *ngIf="selectedService === 'VIRUS'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedVirusOption"
+                          name="seleccion" (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of virus" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
+                      <!-- Dropdown asistencia-->
+
+                      <div class="form-group" *ngIf="selectedService === 'ASISTENCIA SALÓN DE CONFERENCIAS'">
+                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita
+                          ayuda?</label>
+                        <select class="form-control" id="exampleFormControlSelect1"
+                          [(ngModel)]="selectedAttendanceOption" name="seleccion"
+                          (change)="onOptionSelected(item.value)">
+                          <option *ngFor="let item of attendance" [value]="item.value">{{ item.value }}</option>
+                        </select>
+                      </div>
+
                     </ng-container>
+
                     <ng-container>
-                      <div [ngSwitch]="SelectedServiceOption">
+                      <div [ngSwitch]="selectedAccessOption">
                         <ng-container *ngSwitchCase="'CREACION DE USUARIO'">
                           <div class="form-group">
-                            <label for="exampleFormControlInput1">7. Cedula</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" required [(ngModel)]="Cedula" name="Cedula" />
+                            <label for="exampleFormControlInput1">Cedula</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                              required [(ngModel)]="Cedula" name="Cedula" />
 
-                            <label for="exampleFormControlInput1">8. Celular</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" required [(ngModel)]="Celular" name="Celular" />
+                            <label for="exampleFormControlInput1">Celular</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                              required [(ngModel)]="Celular" name="Celular" />
 
-                            <label for="exampleFormControlInput1">9 Cargo</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" required [(ngModel)]="Cargo" name="Cargo" />
+                            <label for="exampleFormControlInput1">Cargo</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                              required [(ngModel)]="Cargo" name="Cargo" />
 
-                            <label for="exampleFormControlInput1">10. Supervisor inmediato</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" required [(ngModel)]="Supervisor" name="Supervisor" />
+                            <label for="exampleFormControlInput1">Supervisor inmediato</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                              required [(ngModel)]="Supervisor" name="Supervisor" />
 
-                            <label for="exampleFormControlInput1">11. Extension del Supervisor Inmediato</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" required [(ngModel)]="Extension" name="Extension" />
+                            <label for="exampleFormControlInput1">Extension del Supervisor Inmediato</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                              required [(ngModel)]="Extension" name="Extension" />
 
                             <div class="form-group">
                               <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea17" name="service" placeholder="Escribir aquí" rows="3"></textarea>
+                              <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                placeholder="Escribir aquí" rows="3"></textarea>
                             </div>
                           </div>
                         </ng-container>
@@ -161,7 +260,9 @@
                         <ng-container *ngSwitchCase="'USUARIO BLOQUEADO'">
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"  placeholder="Escribir aquí"rows="3"  [value]="service.value">{{ service.value }}></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                              placeholder="Escribir aquí" rows="3"
+                              [value]="service.value">{{ service.value }}></textarea>
                           </div>
 
                         </ng-container>
@@ -169,7 +270,9 @@
                         <ng-container *ngSwitchCase="'CAMBIO DE CONTRASEÑA'">
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service" placeholder="Escribir aquí" rows="3"  [value]="service.value">{{ service.value }} ></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                              placeholder="Escribir aquí" rows="3"
+                              [value]="service.value">{{ service.value }} ></textarea>
                           </div>
                         </ng-container>
 
@@ -190,61 +293,251 @@
                         <ng-container *ngSwitchCase="'ACCESO A CARPETA COMPARTIDA'">
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service" placeholder="Escribir aquí" rows="3" [value]="service.value">{{ service.value }} ></textarea>
-                          </div>
-                        </ng-container>
-                      </div>
-
-                    </ng-container>
-
-                  <ng-container>
-                      <div class="form-group"*ngIf="selectedService === 'COMPUTADOR'">
-                        <label for="exampleFormControlSelect2">Seleccione el tipo de servicio en el cual se necesita ayuda?</label>
-                        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="SelectedServiceOption" name="seleccion" (change)="onOptionSelected(item.value)">
-                          <option *ngFor="let item of computer" [value]="item.value">{{ item.value }}</option>
-                        </select>
-
-
-                        <ng-container *ngSwitchCase="PC FUERA DEL DOMINIO">
-                          <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service" placeholder="Escribir aquí" rows="3"  [value]="service.value">{{ service.value }} ></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                              placeholder="Escribir aquí" rows="3"
+                              [value]="service.value">{{ service.value }} ></textarea>
                           </div>
                         </ng-container>
                       </div>
 
 
 
+                    </ng-container>
 
 
+                    <!-- Opciones Computador -->
+                    <ng-container>
+                      <div [ngSwitch]="selectedComputerOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'PC FUERA DEL DOMINIO'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'MONITOR PRESENTA IMAGEN DISTORSIONADA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'TECLADO NO FUNCIONA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                          </div>
+                        </ng-container>
+                      </div>
+                    </ng-container>
+
+                    <!-- Opciones Internet -->
+                    <ng-container>
+                      <div [ngSwitch]="selectedInternetOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'SIN CONEXION A INTERNET'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'ACCESO A WIFI'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'SOLICITAR ACCESO A PAGINA ESPECIFICA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
 
 
+                          </div>
+                        </ng-container>
+                      </div>
+                    </ng-container>
+
+                    <!-- Opciones Impresora -->
+                    <ng-container>
+                      <div [ngSwitch]="selectedPrinterOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'CONFIGURAR MAQUINA DE LABEL'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'CONFIGURAR IMPRESORA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'IMPRIME HOJA SUCIA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'NO IMPRIME'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                          </div>
+                        </ng-container>
+
+                      </div>
+                    </ng-container>
+
+                    <!-- Opciones Escaner -->
+
+                    <ng-container>
+                      <div [ngSwitch]="selectedScannerOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'NO ESCANEA'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'CONFIGURAR ESCANER'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                          </div>
+                        </ng-container>
+
+                      </div>
+                    </ng-container>
+
+                    <!-- Opciones correo electronico -->
+
+                    <ng-container>
+                      <div [ngSwitch]="selectedEmailOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'CREACIÓN DE CORREO'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'CONFIGURAR CORREO ELECTRÓNICO EN PC'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'NO RECIBO ,NI ENVÍO CORREOS'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                            <ng-container *ngSwitchCase="'CONFIGURAR FIRMA CORREO'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
+
+                          </div>
+                        </ng-container>
 
 
+                      </div>
+                    </ng-container>
+
+                    <!-- Opciones Telefonia -->
+
+                    <ng-container>
+                      <div [ngSwitch]="selectedPhoneOption">
+                        <ng-container>
+                          <div>
+
+                            <ng-container *ngSwitchCase="'CREACIÓN DE CORREO'">
+                              <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                  solicitud:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                  placeholder="Escribir aquí" rows="3"
+                                  [value]="service.value">{{ service.value }} ></textarea>
+                              </div>
+                            </ng-container>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                          </div>
+                        </ng-container>
+                      </div>
                     </ng-container>
 
 
@@ -254,69 +547,64 @@
 
 
 
-
-                      <div *ngIf="selectedService === 'INTERNET'">
-                        <div *ngFor="let item of internet">
-                          {{ item.value }}
-                        </div>
+                    <!-- <div *ngIf="selectedService === 'INTERNET'">
+                      <div *ngFor="let item of internet">
+                        {{ item.value }}
                       </div>
+                    </div> -->
 
-                      <div *ngIf="selectedService === 'IMPRESORA'">
-                        <div *ngFor="let item of printer">{{ item.value }}</div>
+                    <!-- <div *ngIf="selectedService === 'IMPRESORA'">
+                      <div *ngFor="let item of printer">{{ item.value }}</div>
+                    </div> -->
+
+                    <!-- <div *ngIf="selectedService === 'ESCANER'">
+                      <div *ngFor="let item of scanner">{{ item.value }}</div>
+                    </div> -->
+
+                    <!-- <div *ngIf="selectedService === 'CORREO ELECTRONICO'">
+                      <div *ngFor="let item of email">{{ item.value }}</div>
+                    </div>
+
+                    <div *ngIf="selectedService === 'TELEFONÍA'">
+                      <div *ngFor="let item of phone">{{ item.value }}</div>
+                    </div>
+
+                    <div *ngIf="selectedService === 'SOFTWARE'">
+                      <div *ngFor="let item of software">
+                        {{ item.value }}
                       </div>
+                    </div>
 
-                      <div *ngIf="selectedService === 'ESCANER'">
-                        <div *ngFor="let item of scanner">{{ item.value }}</div>
-                      </div>
+                    <div *ngIf="selectedService === 'REDES'">
+                      <div *ngFor="let item of network">{{ item.value }}</div>
+                    </div>
 
-                      <div *ngIf="selectedService === 'CORREO ELECTRONICO'">
-                        <div *ngFor="let item of email">{{ item.value }}</div>
-                      </div>
+                    <div *ngIf="selectedService === 'UPS'">
+                      <div *ngFor="let item of ups">{{ item.value }}</div>
+                    </div>
 
-                      <div *ngIf="selectedService === 'TELEFONÍA'">
-                        <div *ngFor="let item of phone">{{ item.value }}</div>
-                      </div>
+                    <div *ngIf="selectedService === 'VIRUS'">
+                      <div *ngFor="let item of virus">{{ item.value }}</div>
+                    </div>
 
-                      <div *ngIf="selectedService === 'SOFTWARE'">
-                        <div *ngFor="let item of software">
-                          {{ item.value }}
-                        </div>
-                      </div>
-
-                      <div *ngIf="selectedService === 'REDES'">
-                        <div *ngFor="let item of network">{{ item.value }}</div>
-                      </div>
-
-                      <div *ngIf="selectedService === 'UPS'">
-                        <div *ngFor="let item of ups">{{ item.value }}</div>
-                      </div>
-
-                      <div *ngIf="selectedService === 'VIRUS'">
-                        <div *ngFor="let item of virus">{{ item.value }}</div>
-                      </div>
-
-                      <div
-                        *ngIf="
+                    <div *ngIf="
                           selectedService === 'ASISTENCIA SALÓN DE CONFERENCIAS'
-                        "
-                      >
-                        <div *ngFor="let item of attendance">
-                          {{ item.value }}
-                        </div>
+                        ">
+                      <div *ngFor="let item of attendance">
+                        {{ item.value }}
                       </div>
+                    </div>
 
-                      <div
-                        *ngIf="selectedService === 'SERVICIOS AUDIOVISUALES'"
-                      >
-                        <div *ngFor="let item of ventanilla">
-                          {{ item.value }}
-                        </div>
+                    <div *ngIf="selectedService === 'SERVICIOS AUDIOVISUALES'">
+                      <div *ngFor="let item of ventanilla">
+                        {{ item.value }}
                       </div>
+                    </div> -->
 
 
                     <!-- campo 7 -->
 
-<!---->
+                    <!---->
 
 
                     <!-- ...remaining code... -->
@@ -324,10 +612,7 @@
                     <br />
 
                     <div class="mt-2 text-center">
-                      <button
-                        class="btn btn-primary text-uppercase"
-                        type="submit"
-                      >
+                      <button class="btn btn-primary text-uppercase" type="submit">
                         Enviar
                       </button>
                     </div>
