@@ -41,6 +41,8 @@ validar = false;
     //campo 3
   }
 
+  test: any[]=[];
+
   areas: any[] = [
   { value: 'Despacho del Vice-Ministro' },
   { value: 'Viceministerio Comercio Exterior' },
@@ -97,6 +99,8 @@ validar = false;
   { value: 'Coopemic' },
   ];
 
+
+
   //services
   services: any[] = [
 
@@ -122,8 +126,6 @@ validar = false;
     { value: 'CREACION DE USUARIO' },
     { value: 'USUARIO BLOQUEADO' },
     { value: 'CAMBIO DE CONTRASEÑA' },
-    { value: 'DESHABILITACION DE USUARIO' },
-    { value: 'CREACIÓN DE CARPETA COMPARTIDA' },
     { value: 'ACCESO A CARPETA COMPARTIDA' },
 
   ];
@@ -246,24 +248,47 @@ validar = false;
 
 
       ];
-
-      //ventanillaVirtual
-
-      ventanilla:any[] = [
-
-      { value: 'GENERAL' },
-
-
-      ];
+      
 
       selectedService : any;
-      SelectedServiceOption: any; // creacion usuarios
+      selectedAccessOption: any; //
+      selectedComputerOption: any; //
+      selectedInternetOption: any; //
+      selectedPrinterOption: any; //
+      selectedScannerOption: any; //
+      selectedEmailOption: any; //
+      selectedPhoneOption: any; //
+      selectedSoftwareOption: any; //
+      selectedNetworkOption: any; //
+      selectedUpsOption: any; //
+      selectedVirusOption: any; //
+      selectedAttendanceOption: any; //
 
+
+
+      
 
       onOptionSelected(selectedValue: string) {
 
         this.selectedService = selectedValue;
-        this.SelectedServiceOption = selectedValue;
+        this.selectedAccessOption = selectedValue;
+        this.selectedComputerOption = selectedValue;
+        this.selectedInternetOption = selectedValue;
+        this.selectedPrinterOption = selectedValue;
+        this.selectedScannerOption = selectedValue;
+        this.selectedEmailOption = selectedValue;
+        this.selectedPhoneOption = selectedValue;
+        this.selectedSoftwareOption = selectedValue;
+        this.selectedNetworkOption = selectedValue;
+        this.selectedUpsOption = selectedValue;
+        this.selectedVirusOption = selectedValue;
+        this.selectedAttendanceOption = selectedValue;
+
+        this.test.push(this.areas);
+        this.test.push(this.software);
+        this.test.push(this.services);
+
+        
         // Perform any further actions based on the selected value
       }
 
