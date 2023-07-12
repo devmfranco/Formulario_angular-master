@@ -116,7 +116,7 @@ validar = false;
     { value: 'UPS' },
     { value: 'VIRUS' },
     { value: 'ASISTENCIA SALÓN DE CONFERENCIAS'},
-    { value: 'SERVICIOS AUDIOVISUALES'},
+
 
   ];
 
@@ -192,8 +192,7 @@ validar = false;
       { value: 'TRASLADAR APARATO TELEFONICO' },
       { value: 'SOLICITUD EXTENSIÓN TELEFÓNICA' },
       { value: 'CAMBIO DE EXT. O NOMBRE EN APARATO TELEFONICO' },
-      { value: 'TELEFONO NO RECIBE LLAMADAS' },
-      { value: 'NUEVA LINEA TELEFONICA' },
+    
 
       ];
 
@@ -203,7 +202,6 @@ validar = false;
 
       { value: 'COPIAR ARCHIVOS'},
       { value: 'ERROR AL ABRIR UN ARCHIVO' },
-      { value: 'INSTALAR MS OFFICE' },
       { value: 'INSTALAR PROGRAMA ESPECIFICO' },
 
       ];
@@ -215,7 +213,7 @@ validar = false;
       { value:'CABLE DE RED'},
       { value: 'NUEVO PUNTO DE RED' },
       { value: 'CONFIGURAR PUNTO DE RED' },
-      { value: 'ASISTENCIA DE LOS PATINILLOS' },
+
 
       ];
 
@@ -241,14 +239,15 @@ validar = false;
 
       attendance:any[] = [
 
-      { value: 'ASISTENCIA SALÓN DE CONFERENCIAS' },
       { value: 'INSTALACIÓN PROYECTOR'},
       { value: 'RESERVACION DE VIDEO CONFERENCIA' },
-      { value: 'RESERVACION DE VIDEO CONFERENCIA' },
+
+
 
 
       ];
-      
+
+
 
       selectedService : any;
       selectedAccessOption: any; //
@@ -266,7 +265,8 @@ validar = false;
 
 
 
-      
+
+
 
       onOptionSelected(selectedValue: string) {
 
@@ -288,7 +288,7 @@ validar = false;
         this.test.push(this.software);
         this.test.push(this.services);
 
-        
+
         // Perform any further actions based on the selected value
       }
 

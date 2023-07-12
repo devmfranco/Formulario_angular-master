@@ -9,7 +9,7 @@
                 <div class="col-xs-offset-2 col-xs-8">
                   <h1 class="display-12 text-center formulario">
                     <div class="text-center">
-                      <img class="img-responsive col-sm-12" style="width: 40%"
+                      <img class="img-responsive col-sm-12" style="width: 45%"
                         src="assets/image/logo-micm-invertido.png" alt="" />
                     </div>
                     <br />
@@ -349,7 +349,7 @@
                         <ng-container>
                           <div>
 
-                            <ng-container *ngSwitchCase="'SIN CONEXION A INTERNET'">
+                            <ng-container *ngSwitchCase="'SIN CONEXION A INTERNET' || 'ACCESO A WIFI' || 'SOLICITAR ACCESO A PAGINA ESPECIFICA' ">
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
@@ -357,25 +357,6 @@
                                   [value]="service.value">{{ service.value }} ></textarea>
                               </div>
                             </ng-container>
-
-                            <ng-container *ngSwitchCase="'ACCESO A WIFI'">
-                              <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
-                                  placeholder="Escribir aquí" rows="3"
-                                  [value]="service.value">{{ service.value }} ></textarea>
-                              </div>
-                            </ng-container>
-
-                            <ng-container *ngSwitchCase="'SOLICITAR ACCESO A PAGINA ESPECIFICA'">
-                              <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Especifique el detalle de su solicitud:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
-                                  placeholder="Escribir aquí" rows="3"
-                                  [value]="service.value">{{ service.value }} ></textarea>
-                              </div>
-                            </ng-container>
-
 
                           </div>
                         </ng-container>
@@ -534,11 +515,253 @@
                               </div>
                             </ng-container>
 
-
                           </div>
                         </ng-container>
                       </div>
                     </ng-container>
+
+
+                    <!-- Opciones asistencia -->
+
+                    <ng-container>
+                      <div [ngSwitch]="selectedAttendanceOption">
+
+                        <ng-container *ngSwitchCase="'INSTALACIÓN PROYECTOR'">
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                              solicitud:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                              placeholder="Escribir aquí" rows="3"
+                              [value]="service.value">{{ service.value }} ></textarea>
+                          </div>
+                        </ng-container>
+
+                        <ng-container *ngSwitchCase="'RESERVACION DE VIDEO CONFERENCIA'">
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                              solicitud:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                              placeholder="Escribir aquí" rows="3"
+                              [value]="service.value">{{ service.value }} ></textarea>
+                          </div>
+                        </ng-container>
+                      </div>
+                    </ng-container>
+
+                        <!-- Opciones de virus -->
+
+                        <ng-container>
+                          <div [ngSwitch]="selectedVirusOption">
+                            <ng-container>
+
+                              <div>
+                                <ng-container *ngSwitchCase="'COMPUTADOR INFECTADO'">
+                                  <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                      solicitud:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                      placeholder="Escribir aquí" rows="3"
+                                      [value]="service.value">{{ service.value }} ></textarea>
+                                  </div>
+                                </ng-container>
+
+                              </div>
+                            </ng-container>
+                          </div>
+                        </ng-container>
+
+                              <!-- Opciones de UPS -->
+
+
+                        <ng-container>
+                          <div [ngSwitch]="selectedUpsOption">
+                            <ng-container>
+                              <div>
+
+                                <ng-container *ngSwitchCase="'UPS NO ENCIENDE'">
+                                  <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                      solicitud:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                      placeholder="Escribir aquí" rows="3"
+                                      [value]="service.value">{{ service.value }} ></textarea>
+                                  </div>
+                                </ng-container>
+
+                                <ng-container *ngSwitchCase="'MANTIENE UN PITIDO CONSTANTE'">
+                                  <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                      solicitud:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                      placeholder="Escribir aquí" rows="3"
+                                      [value]="service.value">{{ service.value }} ></textarea>
+                                  </div>
+                                </ng-container>
+
+                                <ng-container *ngSwitchCase="'CAMBIO DE UPS'">
+                                  <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                      solicitud:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                      placeholder="Escribir aquí" rows="3"
+                                      [value]="service.value">{{ service.value }} ></textarea>
+                                  </div>
+                                </ng-container>
+
+
+                                <!-- Opciones de redes -->
+
+
+                                <ng-container>
+                                  <div [ngSwitch]="selectedNetworkOption">
+                                    <ng-container>
+                                      <div>
+
+                                        <ng-container *ngSwitchCase="'CABLE DE RED'">
+                                          <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                              solicitud:</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                              placeholder="Escribir aquí" rows="3"
+                                              [value]="service.value">{{ service.value }} ></textarea>
+                                          </div>
+                                        </ng-container>
+
+                                        <ng-container *ngSwitchCase="'NUEVO PUNTO DE RED'">
+                                          <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                              solicitud:</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                              placeholder="Escribir aquí" rows="3"
+                                              [value]="service.value">{{ service.value }} ></textarea>
+                                          </div>
+                                        </ng-container>
+
+                                        <ng-container *ngSwitchCase="'CONFIGURAR PUNTO DE RED'">
+                                          <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                              solicitud:</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                              placeholder="Escribir aquí" rows="3"
+                                              [value]="service.value">{{ service.value }} ></textarea>
+                                          </div>
+                                        </ng-container>
+                                        </div>
+                                      </ng-container>
+                                      </div>
+                                    </ng-container>
+
+                                      <!-- Opciones de software -->
+
+                                      <ng-container>
+                                        <div [ngSwitch]="selectedSoftwareOption">
+                                          <ng-container>
+                                            <div>
+
+                                              <ng-container *ngSwitchCase="'COPIAR ARCHIVOS'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+
+                                              <ng-container *ngSwitchCase="'ERROR AL ABRIR UN ARCHIVO'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+
+                                              <ng-container *ngSwitchCase="'INSTALAR PROGRAMA ESPECIFICO'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+                                              </div>
+                                            </ng-container>
+                                            </div>
+                                          </ng-container>
+
+
+                                       <!-- Opciones de phone -->
+
+                                       <ng-container>
+                                        <div [ngSwitch]="selectedPhoneOption">
+                                          <ng-container>
+                                            <div>
+
+                                              <ng-container *ngSwitchCase="'TRASLADAR APARATO TELEFONICO'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+
+                                              <ng-container *ngSwitchCase="'SOLICITUD EXTENSIÓN TELEFÓNICA'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+
+                                              <ng-container *ngSwitchCase="'CAMBIO DE EXT. O NOMBRE EN APARATO TELEFONICO'">
+                                                <div class="form-group">
+                                                  <label for="exampleFormControlTextarea1">Especifique el detalle de su
+                                                    solicitud:</label>
+                                                  <textarea class="form-control" id="exampleFormControlTextarea17" name="service"
+                                                    placeholder="Escribir aquí" rows="3"
+                                                    [value]="service.value">{{ service.value }} ></textarea>
+                                                </div>
+                                              </ng-container>
+                                              </div>
+                                            </ng-container>
+                                            </div>
+                                          </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              </div>
+                            </ng-container>
+                          </div>
+                        </ng-container>
+
+
+
+
+
+
+
+
 
 
 
